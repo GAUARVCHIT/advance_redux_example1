@@ -4,7 +4,7 @@ import {uiReducer} from "./ui-slice";
 const store = configureStore({
   reducer: {
     showCart: uiReducer,
-    counter: cartReducer,
+    itemTotheCart: cartReducer,
   },
 });
 

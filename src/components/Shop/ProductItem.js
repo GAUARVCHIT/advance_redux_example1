@@ -5,22 +5,22 @@ import classes from './ProductItem.module.css';
 
 const ProductItem = (props) => {
   const dispatch=useDispatch();
-  const { title, price, description } = props;
+  const { title, price, description , id} = props;
 
-  const incrementHandler=()=>{
-    dispatch(cartAction.increment());
+  const addItemToCartHandler=()=>{
+    dispatch(cartAction.addItemToCart({id,price,title}));
   }
 
   return (
-    <li className={classes.item}>
+    <li className={classes.item}>ln
       <Card>
         <header>
           <h3>{title}</h3>
-          <div className={classes.price}>${price.toFixed(2)}</div>
+          <div className={classes.price}>${price}</div>
         </header>
         <p>{description}</p>
         <div className={classes.actions}>
-          <button onClick={incrementHandler}>Add to Cart</button>
+          <button onClick={addItemToCartHandler}>Add to Cart</button>
         </div>
       </Card>
     </li>
